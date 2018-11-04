@@ -1,3 +1,4 @@
+@import './fonts.scss';
 @import './mixins.scss';
 
 * {
@@ -5,7 +6,7 @@
 }
 
 html {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'SF Pro display';
   font-size: 16px;
 }
 
@@ -16,7 +17,8 @@ h1,
 h2,
 h3,
 h4,
-p {
+p,
+figure {
   margin: 0;
   padding: 0;
 }

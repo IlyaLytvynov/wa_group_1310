@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <nav class="global-nav global-nav_expand">
+  <nav class="global-nav global-nav_light global-nav_large">
     <div class="global-nav__controls">
       <div class="global-nav__control">
         <button class="global-nav__burger burger">
@@ -18,7 +18,7 @@
         </button>
       </div>
       <div class="global-nav__control">
-        <span>A</span>
+        <img src="../../assets/images/lesson_6/apple_image.svg" alt="">
       </div>
       <div class="global-nav__control">
         <span>C</span>
@@ -48,6 +48,26 @@
       </li>
     </ul>
   </nav>
+  <section class="section section_main">
+    <div class="section__content">
+      <div class="section__text-block text-block text-block_dark">
+        <h1 class="text-block__header">iPhone Xs</h1>
+        <div class="text-block__description">Welcome to big screen</div>
+        <div class="text-block__links">
+          <a href="" class="text-block__link">Learn more</a>
+          <a href="" class="text-block__link">Buy</a>
+        </div>
+      </div>
+      <figure class="section__image section__image_iphone-xs"></figure>
+    </div>
+  </section>
 </body>
+<script>
+  const burger = document.querySelector('.burger');
+  const globalNav =  document.querySelector('.global-nav');
 
+  burger.addEventListener('click', () => {
+    globalNav.classList.toggle('global-nav_expand');
+  })
+</script>
 </html>

@@ -2,12 +2,14 @@
 
 $header-height: 44px;
 $global-nav-font-color: rgb(255,255,255);
+$global-padding: 8px;
 
 .global-nav {
   background-color: rgb(0,0,0);
   height: $header-height;
   display: flex;
   justify-content: center;
+  padding: 0 $global-padding;
   &__controls {
     display: none;
     color: $global-nav-font-color;
@@ -26,6 +28,7 @@ $global-nav-font-color: rgb(255,255,255);
     display: flex;
     @include mobile {
       position: absolute;
+      z-index: 5;
       top: $header-height;
       width: 100%;
       flex-direction: column;
@@ -72,7 +75,6 @@ $global-nav-font-color: rgb(255,255,255);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: yellow;
   }
 
   &_expand {
@@ -108,8 +110,8 @@ $global-nav-font-color: rgb(255,255,255);
 
 .burger {
   @include btn-reset-default;
+  background-color: transparent;
   position: relative;
-  background: red;
   width: 30px;
   height: 30px;
   display: flex;
