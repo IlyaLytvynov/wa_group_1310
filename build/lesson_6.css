@@ -1,8 +1,26 @@
+@font-face {
+  font-family: 'SF Pro display';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/fonts/sf-pro-display_regular.woff2) format("woff2"); }
+
+@font-face {
+  font-family: 'SF Pro display';
+  font-style: normal;
+  font-weight: 500;
+  src: url(./assets/fonts/sf-pro-display_medium.woff2) format("woff2"); }
+
+@font-face {
+  font-family: 'SF Pro display';
+  font-style: normal;
+  font-weight: 200;
+  src: url(./assets/fonts/sf-pro-display_light.woff2) format("woff2"); }
+
 * {
   box-sizing: border-box; }
 
 html {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'SF Pro display';
   font-size: 16px; }
 
 body,
@@ -12,7 +30,8 @@ h1,
 h2,
 h3,
 h4,
-p {
+p,
+figure {
   margin: 0;
   padding: 0; }
 
@@ -22,3 +41,163 @@ ol {
 
 body {
   min-height: 100vh; }
+
+@media (max-width: 767.9px) {
+  .mobile-hidden {
+    display: none; } }
+
+.global-nav {
+  background-color: black;
+  height: 44px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  padding: 0 8px; }
+  .global-nav__controls {
+    display: none;
+    color: white; }
+    @media (max-width: 767.9px) {
+      .global-nav__controls {
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+        border: 1px solid blue; } }
+  .global-nav__menu {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid red;
+    display: -ms-flexbox;
+    display: flex; }
+    @media (max-width: 767.9px) {
+      .global-nav__menu {
+        position: absolute;
+        z-index: 5;
+        top: 44px;
+        width: 100%;
+        -ms-flex-direction: column;
+            flex-direction: column;
+        left: 0;
+        background-color: black;
+        padding: 0 30px;
+        min-height: calc(100vh - 44px);
+        -ms-transform: scaleY(0);
+            transform: scaleY(0);
+        transition: all 0.3s;
+        -ms-transform-origin: top;
+            transform-origin: top; } }
+  .global-nav__item {
+    -ms-flex: 20% 1 1;
+        flex: 20% 1 1;
+    width: 20%; }
+    @media (max-width: 767.9px) {
+      .global-nav__item {
+        width: 100%;
+        -ms-flex: auto 0 0px;
+            flex: auto 0 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s;
+        transition-delay: 0.1s; } }
+  .global-nav__link {
+    display: block;
+    height: 100%;
+    line-height: 44px;
+    text-align: center;
+    color: white;
+    text-decoration: none; }
+    .global-nav__link:hover {
+      background: rgba(255, 255, 255, 0.4); }
+    @media (max-width: 767.9px) {
+      .global-nav__link {
+        text-align: left;
+        border-bottom: 1px solid white; }
+        .global-nav__link:hover {
+          background: transparent; } }
+  .global-nav__control {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center; }
+  .global-nav_expand .global-nav__menu {
+    -ms-transform: scaleY(1);
+        transform: scaleY(1); }
+  .global-nav_expand .global-nav__item {
+    opacity: 1;
+    visibility: visible; }
+  .global-nav_expand .burger__row:first-child {
+    -ms-transform: translateY(7px) rotate(-45deg);
+        transform: translateY(7px) rotate(-45deg); }
+  .global-nav_expand .burger__row:last-child {
+    -ms-transform: translateY(-7px) rotate(45deg);
+        transform: translateY(-7px) rotate(45deg); }
+
+.burger {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+  font-size: 1rem;
+  background-color: transparent;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+  .burger__row {
+    transition: all 0.3s;
+    width: 30px;
+    height: 1px;
+    background-color: white; }
+
+.section__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 600px; }
+  @media (max-width: 767.9px) {
+    .section__content {
+      min-height: 500px; } }
+
+.section_main {
+  background-color: black; }
+
+.section__image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%); }
+  .section__image_iphone-xs {
+    background-image: url(./assets/images/iphone_xs_0afef_large_2x.jpg);
+    background-position: bottom;
+    height: 300px; }
+    @media (max-width: 767.9px) {
+      .section__image_iphone-xs {
+        background-image: url(./assets/images/iphone_xs_0afef_small_2x.jpg);
+        height: 350px; } }
+
+.section__text-block {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+  z-index: 1; }
+
+.text-block {
+  text-align: center; }
+  .text-block_dark {
+    color: white; }
