@@ -29,3 +29,50 @@ for(let i = 0; i < buttons.length; i++) {
 }
 
 btnToggler(document.querySelector('.test'), generateColor());
+
+let students = [ 
+  { name: 'Vasya', age: 18},  
+  { name: 'Petya', age: 20} ,
+  { name: 'Alex', age: 5},
+];
+
+function averageAge(people) {
+  let totalAge = 0;
+
+  for(let i = 0; i < people.length; i++) {
+    totalAge = totalAge + people[i].age;
+  }
+
+  return totalAge / people.length
+}
+
+function maxAge(people) {
+  let maxAge = 0;
+  let name = '';
+  for(let i = 0; i < people.length; i++) {
+    if(maxAge < people[i].age) {
+      maxAge = people[i].age;
+      name = people[i].name;
+    }
+  }
+  return name;
+}
+
+console.log(maxAge(students));
+
+let arr = [-1, 0, 1];
+    
+function isPositive(arr) {
+  let isPositive = true;
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] < 0) {
+      isPositive = false;
+      break;
+    }
+  }
+  return isPositive;
+}
+
+console.log(isPositive([1, 0, 10, 20, 1]));
+
+console.log(averageAge(students));

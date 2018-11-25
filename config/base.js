@@ -12,6 +12,7 @@ const baseConf = (_path) => {
         index: ['babel-polyfill', './src/index/index.js'],
         lesson_6: ['./src/lesson_6/lesson_6.js'],
         lesson_9: ['./src/lesson_9/lesson_9.js'],
+        lesson_11: ['./src/lesson_11/lesson_11.js'],
     };
 
     const plugins = Object.keys(entry).reduce((acc, name) => {
